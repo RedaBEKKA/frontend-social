@@ -1,0 +1,20 @@
+
+<div *ngIf="comment" class="detail-wrap">
+  <h2>{{ comment.postTitle }}</h2>
+  <p>{{ comment.comment }}</p>
+
+  <div class="sugs">
+    <button mat-stroked-button (click)="useSuggestion(comment.suggestion1)">{{comment.suggestion1}}</button>
+    <button mat-stroked-button (click)="useSuggestion(comment.suggestion2)">{{comment.suggestion2}}</button>
+    <button mat-stroked-button (click)="useSuggestion(comment.suggestion3)">{{comment.suggestion3}}</button>
+  </div>
+
+  <mat-form-field appearance="outline" class="full">
+    <textarea matInput [(ngModel)]="replyText" placeholder="Votre réponse"></textarea>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="submit()">Envoyer</button>
+    <button mat-button (click)="router.navigate(['/'])">Retour</button>
+  </div>
+</div>
